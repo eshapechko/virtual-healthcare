@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Virtual healthcare</title>
     <link rel="stylesheet" href="./css/style.css" />
   </head>
   <body>
@@ -127,7 +127,7 @@
       </section>
       <section class="leading-healthcare">
         <div class="container">
-          <div class="leading-healthcare-wrap">
+          <div class="leading-healthcare__wrap">
             <div class="leading-healthcare__picture">
               <img
                 src="./images/leadimg-healthcare.svg"
@@ -172,27 +172,142 @@
       </section>
       <section class="feedback">
         <div class="container">
-          <div class="customers">
-            <h2 class="section-title feedback__section-title">
-              What our customer are saying
-            </h2>
-            <div class="feedback__wrapper">
-              <div class="customer">
-                <img src="./images/customer.svg" alt="customer" />
-                <div class="name">
-                  <h3 class="feedback__subtitle">Edward Newgate</h3>
-                  <p class="feedback__subtitle-text">Founder Circle</p>
+          <div class="feedback__content">
+            <img
+              class="feedback__img-left"
+              src="./images/drops-feedback-left.svg"
+              alt="drops-left"
+            />
+            <img
+              class="feedback__img-right"
+              src="./images/drop-feedback-right.svg"
+              alt="drops-right"
+            />
+            <div class="feedback__customers">
+              <h2 class="section-title feedback__section-title">
+                What our customer are saying
+              </h2>
+              <div class="feedback__wrapper">
+                <div class="feedback__customer">
+                  <img src="./images/customer.svg" alt="customer" />
+                  <div class="feedback__name">
+                    <h3 class="feedback__subtitle">Edward Newgate</h3>
+                    <p class="feedback__subtitle-text">Founder Circle</p>
+                  </div>
                 </div>
+                <p class="feedback__text">
+                  “Our dedicated patient engagement app and web portal allow you
+                  to access information instantaneously (no tedeous form, long
+                  calls, or administrative hassle) and securely”
+                </p>
               </div>
-              <p class="feedback__text">
-                “Our dedicated patient engagement app and web portal allow you
-                to access information instantaneously (no tedeous form, long
-                calls, or administrative hassle) and securely”
-              </p>
             </div>
           </div>
         </div>
       </section>
+      <section class="check-out">
+        <div class="container">
+          <img
+            class="check-out__drops-image"
+            src="./images/drops-check-out.svg"
+            alt="drops-check-out"
+          />
+          <img
+            class="check-out__background-element"
+            src="./images/check-out-background-element.svg"
+            alt="check-out-background-element"
+          />
+          <h2 class="section-title check-out__section-title">
+            Check out our latest article
+          </h2>
+          <div class="check-out__card-wrapper">
+            <div class="check-out__card">
+              <img
+                src="./images/disease-detection.svg"
+                alt="disease-detection"
+              />
+              <div class="check-out__card-content">
+                <h3 class="check-out__card-title">
+                  Disease detection, check up in the laboratory
+                </h3>
+                <p class="check-out__card-text">
+                  In this case, the role of the health laboratory is very
+                  important to do a disease detection...
+                </p>
+                <a href="#" class="check-out__read-more">Read more</a>
+              </div>
+            </div>
+            <div class="check-out__card">
+              <img src="./images/herbal-medicines.svg" alt="herbal-medicines" />
+              <div class="check-out__card-content">
+                <h3 class="check-out__card-title">
+                  Herbal medicines that are safe for consumption
+                </h3>
+                <p class="check-out__card-text">
+                  Herbal medicine is very widely used at this time because of
+                  its very good for your health...
+                </p>
+                <a href="#" class="check-out__read-more">Read more</a>
+              </div>
+            </div>
+            <div class="check-out__card">
+              <img src="./images/natural-care.svg" alt="natural-care" />
+              <div class="check-out__card-content">
+                <h3 class="check-out__card-title">
+                  Natural care for healthy facial skin
+                </h3>
+                <p class="check-out__card-text">
+                  A healthy lifestyle should start from now and also for your
+                  skin health. There are some...
+                </p>
+                <a href="#" class="check-out__read-more">Read more</a>
+              </div>
+            </div>
+          </div>
+          <a href="#" class="button">View all</a>
+        </div>
+      </section>
     </main>
+    <footer class="footer">
+      <div class="container">
+        <div class="footer__wrapper">
+          <div class="footer__trafalgar">
+            <a href="#" class="footer__logo"
+              ><img src="./images/logo-footer.svg" alt="logo-footer"
+            /></a>
+            <p class="footer__description-text">
+              Trafalgar provides progressive, and affordable healthcare,
+              accessible on mobile and online for everyone
+            </p>
+            <p class="footer__text">
+              ©Trafalgar PTY LTD 2020. All rights reserved
+            </p>
+          </div>
+          <div class="footer__item-wrap">
+            <div class="footer__company">
+              <h2 class="footer__section-title">Company</h2>
+              <p class="footer__subtitle-text">About</p>
+              <p class="footer__subtitle-text">Testimonials</p>
+              <p class="footer__subtitle-text">Find a doctor</p>
+              <p class="footer__subtitle-text">Apps</p>
+            </div>
+            <div class="footer__region">
+              <h2 class="footer__section-title">Region</h2>
+              <p class="footer__subtitle-text">Indonesia</p>
+              <p class="footer__subtitle-text">Singapore</p>
+              <p class="footer__subtitle-text">Hongkong</p>
+              <p class="footer__subtitle-text">Canada</p>
+            </div>
+            <div class="footer__help">
+              <h2 class="footer__section-title">Help</h2>
+              <p class="footer__subtitle-text">Help center</p>
+              <p class="footer__subtitle-text">Contact support</p>
+              <p class="footer__subtitle-text">Instructions</p>
+              <p class="footer__subtitle-text">How it works</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
   </body>
 </html>

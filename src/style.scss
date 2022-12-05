@@ -1,18 +1,42 @@
 @import url("https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;600;700&display=swap");
+@import "_variables.scss";
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
 }
-$blue: #458ff6;
-$grey: #7d7987;
 body {
   font-family: "Mulish", sans-serif;
+}
+img {
+  max-width: 100%;
+  display: block;
 }
 .container {
   max-width: 1220px;
   margin: auto;
 }
+.button {
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 18px;
+  color: $blue;
+  @include flexbox(flex, center, center);
+  width: 200px;
+  height: 54px;
+  border-radius: 55px;
+  border: 1px solid $blue;
+}
+.section-title {
+  @include text-style(36px, 56px, $headcolor);
+}
+.text {
+  @include text-style(18px, 30px, $grey);
+  font-weight: 300;
+}
+
+// Header
+
 header {
   padding: 56px 0 80px 0;
   position: absolute;
@@ -20,17 +44,13 @@ header {
   left: 0;
   right: 0;
   .wrap-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
+    @include flexbox(flex, space-between, flex-end);
     li {
       display: inline-block;
       margin-left: 40px;
       a {
         text-decoration: none;
-        font-size: 18px;
-        line-height: 23px;
-        color: #1f1534;
+        @include text-style(18px, 23px, $headcolor);
         opacity: 0.5;
       }
       .active {
@@ -42,54 +62,30 @@ header {
 }
 
 // Hero
+
 .hero {
   padding: 177px 0 190px 0;
   .wrap-hero {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    @include flexbox(flex, space-between, center);
     .virtual-health {
       max-width: 445px;
+      padding-bottom: 48px;
       h1 {
-        font-size: 48px;
-        line-height: 56px;
+        @include text-style(48px, 56px, $headcolor);
       }
       p {
+        @include text-style(21px, 32px, $grey);
         font-weight: 300;
-        font-size: 21px;
-        line-height: 32px;
-        color: $grey;
         margin: 35px 0;
       }
       .button {
         background-color: $blue;
-        color: #fff;
+        color: $secondary-color;
       }
     }
   }
 }
-.button {
-  text-decoration: none;
-  font-weight: 700;
-  font-size: 18px;
-  line-height: 60px;
-  color: $blue;
-  display: flex;
-  justify-content: center;
-  width: 200px;
-  border-radius: 55px;
-  border: 1.4px solid $blue;
-}
-.section-title {
-  font-size: 36px;
-  line-height: 56px;
-}
-.text {
-  font-weight: 300;
-  font-size: 18px;
-  line-height: 30px;
-  color: $grey;
-}
+
 // Section Services
 
 .services {
@@ -101,53 +97,42 @@ header {
     position: relative;
   }
   &__section-title::after {
-    content: "";
-    width: 56px;
-    height: 2px;
-    background-color: #000;
-    display: block;
-    border-radius: 5px;
-    margin: 26px auto 33px auto;
+    @extend %title-after;
+    background-color: $headcolor;
+    margin: 26px auto 33px;
   }
   &__description {
     max-width: 952px;
-    margin: auto;
-    margin-bottom: 80px;
+    margin: 0 auto 80px;
     text-align: center;
   }
   &__cards-wrapper {
     max-width: 1120px;
     margin: auto;
-    display: flex;
-    justify-content: space-between;
+    @include flexbox(flex, space-between, stretch);
     flex-wrap: wrap;
-    .services__card {
-      padding: 46px 45px 46px 38px;
-      width: 350px;
-      margin-bottom: 37px;
-      background: #ffffff;
-      box-shadow: 10px 40px 50px rgba(229, 233, 246, 0.4);
-      border-radius: 20px;
-      .services__card-image {
-        min-height: 95px;
-      }
-    }
-    .services__card-title {
-      font-size: 24px;
-      line-height: 56px;
-      margin-top: 23px;
-    }
-    .services__card-text {
-      font-weight: 300;
-      line-height: 28px;
-      color: $grey;
-    }
   }
-
+  &__card {
+    padding: 46px 45px 46px 38px;
+    width: 350px;
+    margin-bottom: 37px;
+    background: $secondary-color;
+    box-shadow: 10px 40px 50px rgba(229, 233, 246, 0.4);
+    border-radius: 20px;
+  }
+  &__card-image {
+    min-height: 95px;
+  }
+  &__card-title {
+    @include text-style(24px, 56px, $headcolor);
+    margin-top: 23px;
+  }
+  &__card-text {
+    @include text-style(16px, 28px, $grey);
+    font-weight: 300;
+  }
   &__button {
-    max-width: 1220px;
-    margin: auto;
-    margin-top: 35px;
+    margin: 35px auto 0;
   }
   // Можно background image
   &__background {
@@ -164,106 +149,199 @@ header {
     z-index: -1;
   }
 }
-
-.leading-healthcare-wrap {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  .leading-healthcare__content {
+.leading-healthcare {
+  &__wrap {
+    @include flexbox(flex, center, center);
+  }
+  &__content {
     padding-left: 82px;
-    .leading-healthcare__section-title::after {
-      content: "";
-      width: 56px;
-      height: 2px;
-      background-color: #000;
-      border-radius: 10px;
-      display: block;
-      margin: 26px 0 31px 0;
-    }
-    .leading-healthcare__text {
-      max-width: 400px;
-      padding-bottom: 40px;
-    }
+  }
+  &__section-title {
+    max-width: 335px;
+  }
+  &__section-title::after {
+    @extend %title-after;
+    background-color: $headcolor;
+    margin: 26px 0 31px;
+  }
+  &__text {
+    max-width: 400px;
+    padding-bottom: 40px;
   }
 }
 
 .mobile-apps {
-  padding: 229px 0 266px 0;
+  padding: 229px 0 251px 0;
   &__wrapper {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    @include flexbox(flex, space-between, center);
     padding-left: 90px;
-    .mobile-apps__content {
-      max-width: 370px;
-      .mobile-apps__section-title {
-        max-width: 254px;
-        line-height: 48px;
-      }
-      .mobile-apps__section-title::after {
-        content: "";
-        width: 56px;
-        height: 2px;
-        background-color: #000;
-        border-radius: 6px;
-        display: block;
-        margin: 30px 0 31px 0;
-      }
-      .mobile-apps__button {
-        margin-top: 40px;
-      }
-      .mobile-apps__button::after {
-        content: url(../images/arrow-bottom.svg);
-        margin-left: 15px;
-      }
-    }
+  }
+  &__content {
+    max-width: 370px;
+  }
+  &__section-title {
+    max-width: 254px;
+    line-height: 48px;
+  }
+  &__section-title::after {
+    @extend %title-after;
+    background-color: $headcolor;
+    margin: 30px 0 31px 0;
+  }
+  &__button {
+    margin-top: 40px;
+  }
+  &__button::after {
+    content: url(../images/arrow-bottom.svg);
+    margin-left: 15px;
   }
 }
 
-.customers {
-  max-width: 1120px;
-  margin: auto;
-  background: linear-gradient(208.18deg, #67c3f3 9.05%, #5a98f2 76.74%);
-  border-radius: 24px;
-  padding: 64px 125px 79px 120px;
-  .feedback__section-title {
-    color: #fff;
+.feedback {
+  &__content {
+    padding: 15px 50px 0;
+    position: relative;
+  }
+  &__img-left {
+    position: absolute;
+    left: 0;
+    bottom: 39px;
+    z-index: -1;
+  }
+  &__img-right {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+  &__customers {
+    background: linear-gradient(208.18deg, #67c3f3 9.05%, #5a98f2 76.74%);
+    border-radius: 24px;
+    padding: 64px 125px 79px 120px;
+  }
+  &__section-title {
+    color: $secondary-color;
     text-align: center;
   }
-  .feedback__section-title::after {
-    content: "";
-    width: 56px;
-    height: 2px;
-    background-color: #fff;
-    border-radius: 6px;
-    display: block;
-    margin: 25px auto 66px auto;
+  &__section-title::after {
+    @extend %title-after;
+    background-color: $secondary-color;
+    margin: 25px auto 66px;
   }
-  .feedback__wrapper {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    .customer {
-      display: flex;
-      align-items: center;
-      .name {
-        padding-left: 29px;
-        .feedback__subtitle {
-          font-size: 22px;
-          color: #ffffff;
-        }
-        .feedback__subtitle-text {
-          font-size: 18px;
-          line-height: 48px;
-          color: rgba(255, 255, 255, 0.85);
-        }
-      }
-    }
-    .feedback__text {
-      max-width: 411px;
-      font-size: 19px;
-      line-height: 30px;
-      color: rgba(255, 255, 255, 0.9);
-    }
+  &__wrapper {
+    @include flexbox(flex, space-between, center);
+  }
+  &__customer {
+    @include flexbox(flex, center, center);
+  }
+  &__name {
+    padding-left: 29px;
+  }
+  &__subtitle {
+    font-size: 22px;
+    color: $secondary-color;
+  }
+  &__subtitle-text {
+    @include text-style(18px, 48px, rgba(255, 255, 255, 0.85));
+  }
+  &__text {
+    max-width: 411px;
+    @include text-style(19px, 30px, rgba(255, 255, 255, 0.9));
+  }
+}
+
+// Check-out
+
+.check-out {
+  padding: 278px 0 201px 0;
+  .container {
+    position: relative;
+  }
+  &__drops-image {
+    position: absolute;
+    top: 127px;
+    left: 0;
+    z-index: -1;
+  }
+  &__background-element {
+    position: absolute;
+    top: 0;
+    right: -188px;
+    z-index: -1;
+  }
+  &__section-title {
+    text-align: center;
+  }
+  &__section-title::after {
+    @extend %title-after;
+    background-color: $headcolor;
+    margin: 32px auto 79px;
+  }
+  &__card-wrapper {
+    padding: 0 50px 69px;
+    @include flexbox(flex, space-between, stretch);
+  }
+  &__card {
+    max-width: 350px;
+    box-shadow: 10px 40px 50px rgba(229, 233, 246, 0.4);
+    border-radius: 20px;
+    background-color: $secondary-color;
+  }
+  &__card-content {
+    padding: 24px 51px 35px 33px;
+  }
+  &__card-title {
+    @include text-style(21px, 32px, $headcolor);
+  }
+  &__card-text {
+    padding: 12px 0 25px;
+    @include text-style(16px, 28px, $grey);
+    font-weight: 300;
+  }
+  &__read-more {
+    @include text-style(17px, 28px, #4089ed);
+    font-weight: 600;
+    text-decoration: none;
+  }
+  &__read-more::after {
+    content: url(../images/arrow-right.svg);
+    margin-left: 15px;
+  }
+  .button {
+    margin: auto;
+  }
+}
+
+// Footer
+.footer {
+  background: url(../images/drops-footer.svg) no-repeat left 155px bottom,
+    linear-gradient(183.41deg, #67c3f3 -8.57%, #5a98f2 82.96%);
+  &__wrapper {
+    padding: 109px 50px 109px 0;
+    @include flexbox(flex, space-between, center);
+  }
+  &__trafalgar {
+    max-width: 390px;
+    margin-right: 160px;
+  }
+  &__description-text {
+    padding: 17px 0 31px;
+    font-weight: 300;
+    @include text-style(18px, 28px, $secondary-color);
+    max-width: 379px;
+  }
+  &__text {
+    font-weight: 300;
+    @include text-style(16px, 28px, $secondary-color);
+  }
+  &__item-wrap {
+    @include flexbox(flex, space-between, center);
+    flex-grow: 1;
+  }
+  &__section-title {
+    @include text-style(20px, 60px, $secondary-color);
+  }
+  &__subtitle-text {
+    @include text-style(18px, 38px, $secondary-color);
+    font-weight: 300;
   }
 }

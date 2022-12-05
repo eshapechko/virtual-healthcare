@@ -1,0 +1,23 @@
+$blue: #458ff6;
+$grey: #7d7987;
+$headcolor: #000;
+$secondary-color: #fff;
+@mixin flexbox($flex, $j-cont, $a-items) {
+  display: $flex;
+  justify-content: $j-cont;
+  align-items: $a-items;
+}
+
+@mixin text-style($size, $l-height, $color) {
+  font-size: $size;
+  line-height: $l-height;
+  color: $color;
+}
+
+%title-after {
+  content: "";
+  width: 56px;
+  height: 2px;
+  border-radius: 5px;
+  display: block;
+}
