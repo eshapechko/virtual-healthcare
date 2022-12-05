@@ -2,8 +2,8 @@ $blue: #458ff6;
 $grey: #7d7987;
 $headcolor: #000;
 $secondary-color: #fff;
-@mixin flexbox($flex, $j-cont, $a-items) {
-  display: $flex;
+@mixin flexbox($j-cont, $a-items) {
+  display: flex;
   justify-content: $j-cont;
   align-items: $a-items;
 }

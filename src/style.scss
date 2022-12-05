@@ -21,7 +21,7 @@ img {
   font-weight: 700;
   font-size: 18px;
   color: $blue;
-  @include flexbox(flex, center, center);
+  @include flexbox(center, center);
   width: 200px;
   height: 54px;
   border-radius: 55px;
@@ -37,14 +37,14 @@ img {
 
 // Header
 
-header {
+.header {
   padding: 56px 0 80px 0;
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
-  .wrap-header {
-    @include flexbox(flex, space-between, flex-end);
+  &__wrap {
+    @include flexbox(space-between, flex-end);
     li {
       display: inline-block;
       margin-left: 40px;
@@ -65,24 +65,24 @@ header {
 
 .hero {
   padding: 177px 0 190px 0;
-  .wrap-hero {
-    @include flexbox(flex, space-between, center);
-    .virtual-health {
+  &__wrap {
+    @include flexbox(space-between, center);
+    .hero__virtual-health {
       max-width: 445px;
       padding-bottom: 48px;
       h1 {
         @include text-style(48px, 56px, $headcolor);
       }
-      p {
-        @include text-style(21px, 32px, $grey);
-        font-weight: 300;
-        margin: 35px 0;
-      }
-      .button {
-        background-color: $blue;
-        color: $secondary-color;
-      }
     }
+  }
+  &__text {
+    @include text-style(21px, 32px, $grey);
+    font-weight: 300;
+    margin: 35px 0;
+  }
+  .button {
+    background-color: $blue;
+    color: $secondary-color;
   }
 }
 
@@ -109,7 +109,7 @@ header {
   &__cards-wrapper {
     max-width: 1120px;
     margin: auto;
-    @include flexbox(flex, space-between, stretch);
+    @include flexbox(space-between, stretch);
     flex-wrap: wrap;
   }
   &__card {
@@ -151,7 +151,7 @@ header {
 }
 .leading-healthcare {
   &__wrap {
-    @include flexbox(flex, center, center);
+    @include flexbox(center, center);
   }
   &__content {
     padding-left: 82px;
@@ -173,7 +173,7 @@ header {
 .mobile-apps {
   padding: 229px 0 251px 0;
   &__wrapper {
-    @include flexbox(flex, space-between, center);
+    @include flexbox(space-between, center);
     padding-left: 90px;
   }
   &__content {
@@ -228,10 +228,10 @@ header {
     margin: 25px auto 66px;
   }
   &__wrapper {
-    @include flexbox(flex, space-between, center);
+    @include flexbox(space-between, center);
   }
   &__customer {
-    @include flexbox(flex, center, center);
+    @include flexbox(center, center);
   }
   &__name {
     padding-left: 29px;
@@ -278,7 +278,7 @@ header {
   }
   &__card-wrapper {
     padding: 0 50px 69px;
-    @include flexbox(flex, space-between, stretch);
+    @include flexbox(space-between, stretch);
   }
   &__card {
     max-width: 350px;
@@ -313,11 +313,11 @@ header {
 
 // Footer
 .footer {
-  background: url(../images/drops-footer.svg) no-repeat left 155px bottom,
+  background: url(../images/drop-feedback-right-footer.svg) no-repeat -19px 336px,
     linear-gradient(183.41deg, #67c3f3 -8.57%, #5a98f2 82.96%);
   &__wrapper {
     padding: 109px 50px 109px 0;
-    @include flexbox(flex, space-between, center);
+    @include flexbox(space-between, center);
   }
   &__trafalgar {
     max-width: 390px;
@@ -334,7 +334,7 @@ header {
     @include text-style(16px, 28px, $secondary-color);
   }
   &__item-wrap {
-    @include flexbox(flex, space-between, center);
+    @include flexbox(space-between, center);
     flex-grow: 1;
   }
   &__section-title {
